@@ -2,7 +2,8 @@
   <img width="20%" src="./assets/Logo-UNP-Kediri-terbaru-2023.png">   
   <img width="20%" src="./assets/LOGO GENERATION.png"><br/>
 </p>
-## 🎉 Pemrograman Berorientasi Objek 🎉
+## 🎉🎉 Selamat Datang di Python 🎉🎉
+
 Selamat datang di Mata Kuliah Pemrograman Berorientasi Objek
 Program Studi Teknik Informatika
 Universitas Nusantara PGRI Kediri
