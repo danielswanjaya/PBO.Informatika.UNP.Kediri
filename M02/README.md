@@ -5,8 +5,7 @@ Penyampaian informasi ke layar monitor bisa dilakukan melalui dua media, Console
 
 ![<alt text>](img/Screenshot01.png)<br>Gambar 1. Contoh penggunaan perintah print
 
-ContohM0201.py|
-|-:|
+##### ContohM0201.py
 ```python
 print ("Aku belajar dasar Python") 
 print ("Aku pasti bisa")
@@ -14,20 +13,20 @@ print ("Aku pasti bisa")
 
 Terdapat beberapa karakter khusus atau biasa disebut dengan escape character, merupakan karakter yang ditulis setelah tanda backslash (\) dan memiliki fungsi tertentu sesuai dengan kode karakter masing-masing,  seperti pada tabel 1. Contoh penggunaannya seperti pada file ContohM0202.py.
 
-| Notasi |	Deskripsi                           |
-| ------ |:------------------------------------:|
-| `\b`   | Backspace                            |
-| `\n`   | Newline                              |
-| `\t`   | Tab                                  |
-| `\‘`   | Petik Tunggal (Single Quote)         |
-| `\”`   | Petik Ganda (Double Quote)           |
-| `\\`   | Backslash                            |
-| `\ooo` | Octal value                          |
-| `\xhh` | Hexa value                           |
-| `\u`   | Format pencetakkan (termasuk simbol) |
+##### Tabel 1. Escape Character di Python
+|Notasi|Deskripsi|
+|:-:|:-|
+|`\b`| Backspace |
+|`\n`| Newline |
+|`\t`| Tab |
+|`\‘`| Petik Tunggal (Single Quote) |
+|`\”`| Petik Ganda (Double Quote) |
+|`\\`| Backslash |
+|`\ooo`| Octal value |
+|`\xhh`| Hexa value |
+|`\u`| Format pencetakkan (termasuk simbol) |
 
-ContohM0202.py|
-|-:|
+##### ContohM0202.py
 ```python
 print ("Selamat\b Pagi")
 print ("Selamat\n Siang")
@@ -42,8 +41,7 @@ print ("x\u00b2")
 ### 2. Komentar
 Komentar (comment) adalah kode di dalam script Python yang tidak dieksekusi atau tidak dijalankan mesin. Komentar hanya digunakan untuk menandai atau memberikan keterangan tertulis pada script. Komentar biasa digunakan untuk membiarkan orang lain memahami apa yang dilakukan script. atau untuk mengingatkan kepada programmer sendiri jika suatu saat kembali mengedit script tersebut. Untuk menggunakan komentar terdapat 2 cara yaitu satu baris dan beberapa baris. Semua karakter yang ditulis setelah lambang #, sampai akhir baris, menunjukkan bahwa baris tersebut merupakan keterangan. Interpreter dari Python tidak menganggap baris itu ada (sebagai komentar saja). Komentar yang lebih dari satu baris dapat juga ditulis di dalam tanda petik, dengan menggunakan string literal yang dibuka dan ditutup dengan """. File ContohM0203.py adalah contoh pemberian komentar pada script program Python.
 
-ContohM0203.py|
-|-:|
+##### ContohM0203.py
 ```python
 # Nama File : ContohM203.py
 """
@@ -74,8 +72,7 @@ Variabel adalah lokasi memori yang dicadangkan untuk menyimpan nilai-nilai. Ini 
 
 Berbeda dengan bahasa lain, seperti C ataupun C++, variabel di Python tidak perlu dideklarasikan. Deklarasi variabel itu bertujuan untuk menentukan tipe data yang diwakili oleh suatu variabel sehingga deklarasi variabel dapat dilakukan tanpa memberikan nilai ke variabel. Di Python, variabel tidak perlu dideklarasikan terlebih dahulu karena memang variabel itu tidak mempunyai tipe; yang mempunyai tipe data adalah nilai yang dinyatakannya. Itulah sebabnya, satu variabel di Python dapat menyatakan data bertipe bilangan pada suatu saat dan menyatakan data bertipe string pada waktu yang lain. Contoh pemberian nilai (Assignment) ke variabel adalah seperti file ContohM0204.py.
 
-ContohM0204.py|
-|-:|
+##### ContohM0204.py
 ```python
 # Cara pertama
 NilaiA = 10
@@ -118,16 +115,13 @@ prodi = 'Teknik Informatika'
 univ = "UNiversitas Nusantara PGRI Kediri"
 ```
 Adapun penulisan seperti 'Teknik Informatika", yang menggunakan awalan berupa petik tunggal dan akhiran petik ganda tidak diperkenankan. Jika hendak menuliskan string Jum’at, maka bisa dilakukan dengan 2 cara yaitu :
-
 ```python
 Hari1 = 'Jum\'at'
 Hari2 = "Jum'at"
 ```
-
 ContohM0205.py merupakan contoh penulisan beberapa nilai dengan tipe data yang berbeda, beserta cara mengetahui tipe dari nilai tersebut, dengan mengingat bahwa yang memiliki tipe bukan variabelnya tetapi nilai yang dirujuk suatu variabel.
 
-ContohM0205.py|
-|-:|
+##### ContohM0205.py
 ```python
 vari = 17; print(vari, type(vari))
 vari = 17.08 ;print(vari, type(vari))
@@ -164,8 +158,7 @@ print('NilaiA = {2}\nNilaiB = {0}\nNilaiC = {1}\n'.format(NilaiB, NilaiC, NilaiA
 
 ### 7. Input
 Input atau inputan (dalam konteks pemrograman) merupakan sebuah data, informasi, atau nilai apa pun yang dikirimkan oleh user kepada komputer untuk diproses lebih lanjut. Dalam Python untuk keperluan pemasukkan data dari pengguna dapat dilakukan dengan memanfaatkan fungsi input. Nilai yang didapat dari fungsi input berupa String, sehingga jika kita perlu nilai bertipe selain integer, maka kita perlu mengkonversi tipe data string menjadi tipe yang diperlukan, misalnya jika ingin mengkonversi ke tipe integer, maka dapat diubah menggunakan fungsi int(). jika ingin mengkonversi ke tipe integer, maka dapat diubah menggunakan fungsi float(). Contoh M0206.py adalah contoh penggunaan fungsi input, int() dan float().
-ContohM0205.py|
-|-:|
+##### ContohM0206.py
 ```python
 panjang = int(input("Panjang = "))
 lebar = int(input("Lebar = "))
@@ -176,12 +169,11 @@ print('Luas Alas =', luas)
 print('Volume =', volume)
 ```
 
-Tetapi terkadang karena kebiasaan orang Indonesia menuliskan pecahan menggakan tanda koma bukan titik, maka hal ini bisa menyebabkan terjadinya runtime error atau kesalahan saat program dijalankan, seperti gambar 9. Untuk mengatasi hal ini gunakan exception handling, yaitu kemampuan program Python untuk menangani kesalahan. Contoh0207.py adalah contoh penggunaan Exception Handling di Python.
+Tetapi terkadang karena kebiasaan orang Indonesia menuliskan pecahan menggakan tanda koma bukan titik, maka hal ini bisa menyebabkan terjadinya runtime error atau kesalahan saat program dijalankan, seperti gambar 9. Untuk mengatasi hal ini gunakan exception handling, yaitu kemampuan program Python untuk menangani kesalahan. ContohM0207.py adalah contoh penggunaan Exception Handling di Python.
 
 ![alt text](img/Screenshot04.png)<br>Gambar 4. Runtime Error karena kesalahan penulisan pemisah desimal
 
-ContohM0205.py|
-|-:|
+##### ContohM0207.py
 ```python
 panjang = int(input("Panjang = "))
 lebar = int(input("Lebar = "))
@@ -198,3 +190,109 @@ print('Volume =', volume)
 
 Setelah penggunaan try-except maka ketika terjadi kesalahan, maka program tidak akan berhenti, tetapi mengeksekusi bagian except (baris ke-6 dan 7), kemudian melanjutkan script program berikutnya, baris ke-8 sampai 11.
 Pada baris ke 4, 6 & 7 terlihat bagian script yang menjorok ke dalam, hal ini disebut sebagai indentasi, Indentasi digunakan untuk mengindikasi tingkatan kode pada Python atau biasa disebut sebagai blok program. Karakter  white space yang bisa digunakan untuk indentasi baris adalah spasi atau tab (pada bahasa pemrograman lainnya biasanya menggunakan tanda kurung kurawal atau kata kunci). Tetapi karakter white space yang digunakan untuk indentasi harus konsisten dalam satu file program Python. Jika karakter white space yang digunakan berbeda, maka Python akan memberikan pesan kesalahan.
+
+### 8. Operator
+Suatu Ekspresi dimaksudkan untuk menghasilkan suatu nilai. Umumnya, ekspresi mengandung operator dan operan. Operator adalah simbol yang mewakili suatu operasi. Sebagai contoh, + menyatakan operasi penjumlahan dan * menyatakan operasi perkalian. Adapun operan adalah bagian yang dikenai operasi oleh operator. Misalnya ekspresi 2 + 3 * 4,  bagian yang sebut sebagai operator adalah + dan *, sedangkan bagian yang disebut sebagai operan adalah 2, 3 dan 4. Terdapat beberapa jenis operator dalam pemrograman Python, yaitu :
+
+#### 1.	Operator Aritmetika
+Operator aritmetika digunakan untuk melaksanakan perhitungan Matematika. Operator aritmetika yang tersedia dapat dilihat pada Tabel 2. Terdapat pula cara mempersingkat (shortcut) suatu ekspresi seperti varA = varA + 5 bisa disingkat menjadi varA += 5, shortcut untuk operator Aritmatika lainnya seperti pada Tabel 3.
+
+##### Tabel 2. Operator Aritmatika
+|Operator|Keterangan|Contoh|
+|:-:|-|-|
+|`**`| Pangkat |`3 ** 2 = 9`<br>`25 ** 0.5 = 5`|
+|`-`| Negasi |`-5`|
+|`*`| Perkalian |`2 * 3 = 6`|
+|`/`| Pembagian pecahan |`3 / 2 = 1.5`<br>`3 / 1.2 = 2.5`|
+|`//` | Pembagian bulat<br>(Tipe hasil menyesuaikan tipe operan) |`3 // 2 = 1`<br>`3 // 1.2 = 2.0`|
+|`%`| Sisa pembagian |`3 % 2 = 1`<br>`8 % 3 = 2`|
+|`+`| Penjumlahan |`2 + 3 = 5`|
+|`-`| Pengurangan |`5 - 3 = 2`|
+
+##### Tabel 3. Shortcut Operator Aritmatika
+|Operator|Keterangan|Contoh|Arti|
+|:-:|-|-|-|
+|`**=`|Pangkat|`varA **= 5`|`varA = varA ** 5`|
+|`*=`|Perkalian|`varA *= 5`|`varA = varA * 5`|
+|`/=`|Pembagian pecahan|`varA /= 5`|`varA = varA / 5`|
+|`//=`|Pembagian bulat|`varA //= 5`|`varA = varA // 5`|
+|`%=`|Sisa pembagian|`varA %= 5`|`varA = varA % 5`|
+|`+=`|Penjumlahan|`varA += 5`|`varA = varA + 5`|
+|`-=`|Pengurangan|`varA -= 5`|`varA = varA - 5`|
+
+Khusus operator + dan * dapat digunakan pada operasi teks (String). Operator + digunakan untuk menggabung teks dan operator * digunakan untuk mengulang teks. Contoh0208.py adalah contoh penggunaan operator + dan * pada operasi teks.
+
+##### ContohM0208.py
+```python
+varA = 'Informatika-'
+varB = 'Kediri'
+varC = varA + varB
+varD = varA * 3
+print(varC)
+print(varD)
+```
+
+#### 2. Operator Pembanding
+Operator pembanding berguna untuk membandingkan dua operan dengan hasil berupa nilai bertipe bool (yakni True atau False). Tipe dari Operan bisa berupa bilangan atau teks. Daftar operator pembanding ditunjukkan pada Tabel 4. Contoh0209.py adalah contoh penggunaan operator pembanding untuk data bilangan dan teks. Pembandingan string didasarkan pada nilai ASCII karakter-karakter yang menyusun string. Tabel ASCII dapat dilihat di situs https://www.ascii-code.com/.
+
+##### Tabel 4. Operator Pembanding
+|Operator|Keterangan|Contoh|Hasil|
+|:-:|-|-|-|
+|`>`|Lebih dari|`8 > 7`|` True`|
+|`<`|Kurang dari|`8 < 7`|`False`|
+|`==`|Sama dengan|`8 == 7`|`False`|
+|`!=`|Tidak sama dengan|`8 != 7`|`True`|
+|`>=`|Lebih dari atau sama dengan|`8 >= 7`|`True`|
+|`<=`|Kurang dari atau sama dengan|`8 <= 7`|`False`|
+
+##### ContohM0209.py
+```python
+varA = 8 ; varB = 7
+varC = 'TEKS' ; varD = 'teks'
+print(varA > varB, varA < varB, varA == varB)
+print(varA >= varB, varA <= varB, varA != varB)
+print(varC > varD, varC < varD, varC == varD)
+print(varC >= varD, varC <= varD, varC != varD)
+```
+
+#### 3. Operator Logika
+Operator logika berguna untuk membentuk suatu keadaan logika (benar atau salah) berdasarkan satu atau dua ekspresi Boolean (ekspresi yang menghasilkan nilai True atau False). Tiga operator logika dapat dilihat pada Tabel 5. Tabel kebenaran ketiga operator logika ditunjukkan pada Tabel 6.
+
+##### Tabel 5. Operator Logika
+|Operator|Keterangan|Contoh|Hasil|
+|:-:|-|-|-|
+|`and`|Operasi “dan”|`True and False`|`False`|
+|`or`|Operasi “atau”|`True or False`|`True`|
+|`not`|Operasi negasi (kebalikan)|`not True`|`False`|
+
+##### Tabel 6. Operator Aritmatika
+|varA|varB|not varA|not varB|varA and varB|varA or varB|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|`True`|`True`|`False`|`False`|`True`|`True`|
+|`True`|`False`|`False`|`True`|`False`|`True`|
+|`False`|`True`|`True`|`False`|`False`|`True`|
+|`False`|`False`|`True`|`True`|`False`|`False`|
+
+#### 4. Operator Berbasis Bit
+Bit berasal dari “binary digit”. Satu bit menyatakan satu angka 0 atau 1. Sebagaimana diketahui, pada sistem biner, angka yang dikenal hanya berupa 0 atau 1. Untuk memahami operasi pada tataran bit, penomoran bit seperti yang diperlihatkan pada Gambar 10 perlu diperhatikan. Bit terendah mempunyai posisi 0. Angka 158 pada contoh tersebut berasal dari :<br>
+`0 x 20 + 1 x 21 + 1 x 22 + 1 x 23 + 0 x 24 + 0 x 25 + 0 x 26 + 1 x 27`
+<br>Penulisan literal dalam sistem biner telah diperkenalkan pada ContohM0205.py. Sebagai contoh, 158 dalam sistem desimal dapat ditulis menjadi `0b10011110`. Selain itu Fungsi bin() bisa digunakan untuk keperluan ini. Misalnya bin(158) akan menghasilnkan `0b10011110`. Python menyediakan enam operator yang berbasis bit, seperti pada tabel 7. Shortcut untuk operator Berbasis bit seperti pada tabel 8.
+
+##### Tabel 7. Operator Berbasis bit
+|Operator|Keterangan|Contoh|Hasil|Penjelasan|
+|:-:|-|-|-|-|
+|`&`|Operasi bit “atau”|`12 & 10`|`8`|![alt text](img/Screenshot05.png)|
+|`\|`|Operasi bit “atau”|`12 \| 10`|`14`|![alt text](img/Screenshot06.png)|
+|`^`|Operasi bit “XOR”|`12 ^ 10`|`6`|![alt text](img/Screenshot07.png)|
+|`~`|Operasi komplemen<br>Hasil, `~var = -(var)-1`|`~12`<br>`~-12`|`-13`<br>`11`|`-(12)-1 = -13`<br>`-(-12)-1 = 11`|
+|`>>`|Operator geser bit ke kanan|`15 >> 2`|`3`|![alt text](img/Screenshot08.png)|
+|`<<`|Operator geser bit ke kiri|`15 << 2`|`60`|![alt text](img/Screenshot09.png)|
+
+##### Tabel 8. Shortcut Operator Berbasis bit
+|Operator|Keterangan|Contoh|Arti|
+|:-:|-|-|-|
+|`&=`|Operasi bit “dan”|`varA &= 2`|`varA = varA & 2`|
+|`\|=`|Operasi bit “atau”|`varA |= 2`|`varA = varA \| 2`|
+|`^=`|Operasi bit “XOR”|`varA ^= 2`|`varA = varA ^ 2`|
+|`>>=`|Operator geser bit ke kanan|`varA >>= 2`|`varA = varA >> 2`|
+|`<<=`|Operator geser bit ke kiri|`varA <<= 2`|`varA = varA << 2`|
