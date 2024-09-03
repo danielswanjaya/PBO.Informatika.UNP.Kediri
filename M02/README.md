@@ -91,7 +91,7 @@ print("Setelah penukaran :")
 print("NilaiA = ",NilaiA) ; print("NilaiD = ",NilaiD)
 ```
 
-Pada assignment cara pertama, baris ke-2 sampai dengan 4, adalah cara umum yang digunakan untuk pemberian nilai. Cara kedua, baris ke-7, adalah cara lain jika terdapat beberapa Variabel yang mempunyai nilai yang sama. Cara ketiga, baris ke-10, adalah cara untuk memberi nilai pada beberapa Variabel secara bersamaan. Cara ketiga juga bisa digunakan untuk menukar isi beberapa Variabel seperti pada baris ke-13. Output dari Contoh0204.py, jika bagian nilai variabel diperhatikan, terdapat spasi tambahan, misal NilaiA =  10, dimana setelah tanda sama dengan terdapat 2 spasi, padahal pada perintah cetaknya tidak ada 2 spasi. Hal ini disebabkan oleh arti tanda koma pada perintah print adalah separator default antar teks berupa spasi, misal terdapat perintah berikut :
+Pada assignment cara pertama, baris ke-2 sampai dengan 4, adalah cara umum yang digunakan untuk pemberian nilai. Cara kedua, baris ke-7, adalah cara lain jika terdapat beberapa Variabel yang mempunyai nilai yang sama. Cara ketiga, baris ke-10, adalah cara untuk memberi nilai pada beberapa Variabel secara bersamaan. Cara ketiga juga bisa digunakan untuk menukar isi beberapa Variabel seperti pada baris ke-13. Output dari ContohM0204.py, jika bagian nilai variabel diperhatikan, terdapat spasi tambahan, misal NilaiA =  10, dimana setelah tanda sama dengan terdapat 2 spasi, padahal pada perintah cetaknya tidak ada 2 spasi. Hal ini disebabkan oleh arti tanda koma pada perintah print adalah separator default antar teks berupa spasi, misal terdapat perintah berikut :
 ```python
 print("Teknik","Informatika","Universitas","Nusantara","PGRI","Kediri")
 ```
@@ -220,7 +220,7 @@ Operator aritmetika digunakan untuk melaksanakan perhitungan Matematika. Operato
 |`+=`|Penjumlahan|`varA += 5`|`varA = varA + 5`|
 |`-=`|Pengurangan|`varA -= 5`|`varA = varA - 5`|
 
-Khusus operator + dan * dapat digunakan pada operasi teks (String). Operator + digunakan untuk menggabung teks dan operator * digunakan untuk mengulang teks. Contoh0208.py adalah contoh penggunaan operator + dan * pada operasi teks.
+Khusus operator + dan * dapat digunakan pada operasi teks (String). Operator + digunakan untuk menggabung teks dan operator * digunakan untuk mengulang teks. ContohM0208.py adalah contoh penggunaan operator + dan * pada operasi teks.
 
 ##### ContohM0208.py
 ```python
@@ -233,7 +233,7 @@ print(varD)
 ```
 
 #### 2. Operator Pembanding
-Operator pembanding berguna untuk membandingkan dua operan dengan hasil berupa nilai bertipe bool (yakni True atau False). Tipe dari Operan bisa berupa bilangan atau teks. Daftar operator pembanding ditunjukkan pada Tabel 4. Contoh0209.py adalah contoh penggunaan operator pembanding untuk data bilangan dan teks. Pembandingan string didasarkan pada nilai ASCII karakter-karakter yang menyusun string. Tabel ASCII dapat dilihat di situs https://www.ascii-code.com/.
+Operator pembanding berguna untuk membandingkan dua operan dengan hasil berupa nilai bertipe bool (yakni True atau False). Tipe dari Operan bisa berupa bilangan atau teks. Daftar operator pembanding ditunjukkan pada Tabel 4. ContohM0209.py adalah contoh penggunaan operator pembanding untuk data bilangan dan teks. Pembandingan string didasarkan pada nilai ASCII karakter-karakter yang menyusun string. Tabel ASCII dapat dilihat di situs https://www.ascii-code.com/.
 
 ##### Tabel 4. Operator Pembanding
 |Operator|Keterangan|Contoh|Hasil|
@@ -256,7 +256,7 @@ print(varC >= varD, varC <= varD, varC != varD)
 ```
 
 #### 3. Operator Logika
-Operator logika berguna untuk membentuk suatu keadaan logika (benar atau salah) berdasarkan satu atau dua ekspresi Boolean (ekspresi yang menghasilkan nilai True atau False). Tiga operator logika dapat dilihat pada Tabel 5. Tabel kebenaran ketiga operator logika ditunjukkan pada Tabel 6.
+Operator logika berguna untuk membentuk suatu keadaan logika (benar atau salah) berdasarkan satu atau dua ekspresi Boolean (ekspresi yang menghasilkan nilai True atau False). Tiga operator logika dapat dilihat pada Tabel 5. Tabel kebenaran ketiga operator logika ditunjukkan pada Tabel 6. ContohM0210.py adalah contoh penggunaan operator Logika, hasilnya sama seperti Tabel 6.
 
 ##### Tabel 5. Operator Logika
 |Operator|Keterangan|Contoh|Hasil|
@@ -265,7 +265,7 @@ Operator logika berguna untuk membentuk suatu keadaan logika (benar atau salah) 
 |`or`|Operasi “atau”|`True or False`|`True`|
 |`not`|Operasi negasi (kebalikan)|`not True`|`False`|
 
-##### Tabel 6. Operator Aritmatika
+##### Tabel 6. Operator Logika
 |varA|varB|not varA|not varB|varA and varB|varA or varB|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |`True`|`True`|`False`|`False`|`True`|`True`|
@@ -273,12 +273,65 @@ Operator logika berguna untuk membentuk suatu keadaan logika (benar atau salah) 
 |`False`|`True`|`True`|`False`|`False`|`True`|
 |`False`|`False`|`True`|`True`|`False`|`False`|
 
+##### ContohM0210.py
+```python
+varA0 = varB0 = False
+varA1 = varB1 = True
+print("varA\tvarB\t(not varA)\t(not varB)\t(varA and varB)\t(varA or varB)")
+print(f"{varA1}\t{varB1}\t{not varA1}\t\t{not varB1}\t\t{varA1 and varB1}\t\t{varA1 or varB1}")
+print(f"{varA1}\t{varB0}\t{not varA1}\t\t{not varB0}\t\t{varA1 and varB0}\t\t{varA1 or varB0}")
+print(f"{varA0}\t{varB1}\t{not varA0}\t\t{not varB1}\t\t{varA0 and varB1}\t\t{varA0 or varB1}")
+print(f"{varA0}\t{varB0}\t{not varA0}\t\t{not varB0}\t\t{varA0 and varB0}\t\t{varA0 or varB0}")
+```
+
+Perintah cetak pada ContohM0210.py baris ke-4 hingga 7 menggunakan F-string. F-string (atau formatted string literal) adalah cara yang lebih modern dan efisien untuk memformat string di Python. Dengan f-string, kita bisa langsung menyisipkan nilai variabel ke dalam string dengan cara yang lebih intuitif. F-string mulai dikenalkan pada Python versi 3.6. Aturan penggunaannya adalah sebagai berikut :
+1. Awali string dengan huruf `f` sebelum tanda kutip
+2. Kurung kurawal `{}` untuk menandai tempat di mana kita ingin menyisipkan nilai
+3. Nama Variabel atau Ekspresi Perhitungan dapat diletakan di dalam tanda kurung kurawal
+
+Terdapat fitur tambahan yang disediakan oleh Python pada F-String, yaitu format spesifikasi, dimana kita bisa menggunakan format spesifik untuk mengontrol tampilan nilai. cara penggunaanya adalah `f"{nilai:format_spesifikasi}"`. Format spesifikasi yang dapat digunakan adalah :
+- Lebar kolom & penjajaran: Menentukan berapa banyak karakter yang akan digunakan untuk menampilkan nilai, dan menentukan apakah nilai akan sejajar ke kiri, kanan, atau tengah. Misal :
+```python
+nama = "Daniel"
+print(f"|{nama:<18}|") # < , sejajar kiri
+print(f"|{nama:^18}|") # ^ , sejajar tengah
+print(f"|{nama:>18}|") # > , sejajar kanan
+```
+- Jumlah desimal: Mengatur berapa banyak angka di belakang koma. Misal :
+```python
+euler = 2.718281828
+print(f"Nilai bilangan euler adalah: {euler:.2f}")
+```
+- Pengisian: Menentukan karakter yang akan digunakan untuk mengisi ruang kosong. Misal :
+```python
+nilai = 23
+print(f"{nilai:05d}")
+```
+- Konversi tipe: Mengubah tipe data nilai sebelum ditampilkan. Kode format untuk konversi tipe seperti pada Tabel 7. Misal :
+```python
+bilangan = 10
+print(f"{bilangan:b}")
+print(f"{bilangan:x}")
+```
+##### Tabel 7. Kode Format untuk Konversi Tipe
+|Kode|Keterangan|
+|:-:|-|
+|`b`|Mengubah nilai menjadi bilangan biner|
+|`x`|Mengubah nilai menjadi bilangan heksadesimal (huruf kecil)|
+|`X`|Mengubah nilai menjadi bilangan heksadesimal (huruf besar)|
+|`o`|Mengubah nilai menjadi bilangan oktal|
+|`n`|Mengubah nilai menjadi format angka yang sesuai dengan lokal|
+|`e`|Mengubah nilai menjadi notasi ilmiah (dengan huruf e)|
+|`E`|Mengubah nilai menjadi notasi ilmiah (dengan huruf E)|
+|`f`|Mengubah nilai menjadi bilangan desimal (float)|
+|`%`|Mengubah nilai menjadi persentase|
+
 #### 4. Operator Berbasis Bit
 Bit berasal dari “binary digit”. Satu bit menyatakan satu angka 0 atau 1. Sebagaimana diketahui, pada sistem biner, angka yang dikenal hanya berupa 0 atau 1. Untuk memahami operasi pada tataran bit, penomoran bit seperti yang diperlihatkan pada Gambar 10 perlu diperhatikan. Bit terendah mempunyai posisi 0. Angka 158 pada contoh tersebut berasal dari :<br>
-`0 x 20 + 1 x 21 + 1 x 22 + 1 x 23 + 0 x 24 + 0 x 25 + 0 x 26 + 1 x 27`
-<br>Penulisan literal dalam sistem biner telah diperkenalkan pada ContohM0205.py. Sebagai contoh, 158 dalam sistem desimal dapat ditulis menjadi `0b10011110`. Selain itu Fungsi bin() bisa digunakan untuk keperluan ini. Misalnya bin(158) akan menghasilnkan `0b10011110`. Python menyediakan enam operator yang berbasis bit, seperti pada tabel 7. Shortcut untuk operator Berbasis bit seperti pada tabel 8.
+`0 x 2`<sup>`0`</sup>` + 1 x 2`<sup>`1`</sup>` + 1 x 2`<sup>`2`</sup>` + 1 x 2`<sup>`3`</sup>` + 0 x 2`<sup>`4`</sup>` + 0 x 2`<sup>`5`</sup>` + 0 x 2`<sup>`6`</sup>` + 1 x 2`<sup>`7`</sup>
+<br>Penulisan literal dalam sistem biner telah diperkenalkan pada ContohM0205.py. Sebagai contoh, 158 dalam sistem desimal dapat ditulis menjadi `0b10011110`. Selain itu Fungsi bin() bisa digunakan untuk keperluan ini. Misalnya bin(158) akan menghasilnkan `0b10011110`. Python menyediakan enam operator yang berbasis bit, seperti pada tabel 8. Shortcut untuk operator Berbasis bit seperti pada tabel 9. ContohM0211.py adalah contoh penggunaan Operator Berbasis Bit, hasil eksekusinya seperti contoh & hasil pada tabel 8.
 
-##### Tabel 7. Operator Berbasis bit
+##### Tabel 8. Operator Berbasis bit
 |Operator|Keterangan|Contoh|Hasil|Penjelasan|
 |:-:|-|-|-|-|
 |`&`|Operasi bit “atau”|`12 & 10`|`8`|![alt text](img/Screenshot05.png)|
@@ -288,11 +341,23 @@ Bit berasal dari “binary digit”. Satu bit menyatakan satu angka 0 atau 1. Se
 |`>>`|Operator geser bit ke kanan|`15 >> 2`|`3`|![alt text](img/Screenshot08.png)|
 |`<<`|Operator geser bit ke kiri|`15 << 2`|`60`|![alt text](img/Screenshot09.png)|
 
-##### Tabel 8. Shortcut Operator Berbasis bit
+##### Tabel 9. Shortcut Operator Berbasis bit
 |Operator|Keterangan|Contoh|Arti|
 |:-:|-|-|-|
 |`&=`|Operasi bit “dan”|`varA &= 2`|`varA = varA & 2`|
-|`\|=`|Operasi bit “atau”|`varA |= 2`|`varA = varA \| 2`|
+|`\|=`|Operasi bit “atau”|`varA \|= 2`|`varA = varA \| 2`|
 |`^=`|Operasi bit “XOR”|`varA ^= 2`|`varA = varA ^ 2`|
 |`>>=`|Operator geser bit ke kanan|`varA >>= 2`|`varA = varA >> 2`|
 |`<<=`|Operator geser bit ke kiri|`varA <<= 2`|`varA = varA << 2`|
+
+##### ContohM0211.py
+```python
+varA, varB, varC, varD = 12, 10, 15, 2
+print(f"{varA} & {varB} = {varA & varB}")
+print(f"{varA} | {varB} = {varA | varB}")
+print(f"{varA} ^ {varB} = {varA ^ varB}")
+print(f"~{varA} = {~varA}")
+print(f"~{-varA} = {~(-varA)}")
+print(f"{varC} >> {varD} = {varC >> varD}")
+print(f"{varC} << {varD} = {varC << varD}")
+```
