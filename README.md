@@ -15,6 +15,7 @@ Materi yang ada disertai bahan perkuliahan Teori & Praktikum.
 Materi dihimpun dari banyak sumber, sehingga kami tidak menyertakan kutipan ataupun sitasi.
 
 ### List Materi :
-| Langkah |              Topik               |                                  Target Pembelajaran                                  |            Materi Rujukan             |
-| :-----: | :------------------------------: | :-----------------------------------------------------------------------------------: | :-----------------------------------: |
-|   01    | Introduksi Pemograman dan Python | Memahami apa itu membuat program dan apa peran Python dalam proses pembuatan program  |    [Materi]    |
+|Langkah|Topik|Target Pembelajaran|Materi Rujukan|
+|:-:|:-:|:-:|:-:|
+|01|Dasar Python|Pengenalan Lingkungan Pemrograman Python|[M01](M01/README.md)|
+|02|Dasar Python|Dasar Pemrograman Python|[M02](M02/README.md)|
