@@ -209,3 +209,6 @@ print('Setelah penambahan :\n',fruits)
 fruits = fruits[:4] + ('Strawberry',) + fruits[4:]
 print('Setelah penyisipan :\n',fruits)
 ```
+
+|[# Awal](../README.md)<br>[# Materi Sebelumnya](../M03/README.md)<br>[# Materi Berikutnya](../M05/README.md)|
+|-|
