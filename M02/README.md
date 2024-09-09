@@ -361,3 +361,6 @@ print(f"~{-varA} = {~(-varA)}")
 print(f"{varC} >> {varD} = {varC >> varD}")
 print(f"{varC} << {varD} = {varC << varD}")
 ```
+
+|[# Awal](../README.md)<br>[# Materi Sebelumnya](../M01/README.md)<br>[# Materi Berikutnya](../M03/README.md)|
+|-|

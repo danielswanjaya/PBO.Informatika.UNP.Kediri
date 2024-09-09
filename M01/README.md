@@ -42,3 +42,8 @@ Kekurangan dari mode interaktif adalah anda harus mengetik perintahnya satu-pers
 
 ### 3. Instalasi Phyton & Visual Studio Code
 Sebelum memulai pembelajaran Python lebih lanjut, perlu perlu dipahami bahwa dalam proses perkuliahan mata kuliah PBO ini digunakan Python versi 3.12.4 ([sumber](https://www.python.org/downloads/windows/)) dan Editor Teks Visual Studio Code versi 1.92.2 ([sumber](https://marketplace.visualstudio.com/items?itemName=ms-python.python)) dengan dilengkapi extension Python ([sumber](https://marketplace.visualstudio.com/items?itemName=ms-python.python)). Cara instalasi Python, Visual Studio Code & Extension yang dibutuhkan silakan lihat di video dari channel Kelas Terbuka ([Tautan](https://www.youtube.com/watch?v=xETkm9H6aaY)).
+
+
+
+|[# Awal](../README.md)<br>[# Materi Berikutnya](../M02/README.md)|
+|-|
