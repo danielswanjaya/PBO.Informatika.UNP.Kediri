@@ -19,3 +19,6 @@ Materi dihimpun dari banyak sumber, sehingga kami tidak menyertakan kutipan atau
 |:-:|:-:|:-:|:-:|
 |01|Dasar Python|Pengenalan Lingkungan Pemrograman Python|[M01](M01/README.md)|
 |02|Dasar Python|Dasar Pemrograman Python|[M02](M02/README.md)|
+|03|Dasar Python|Tipe Data Kolektif (List)|[M03](M03/README.md)|
+|04|Dasar Python|Tipe Data Kolektif (Tuple)|[M04](M04/README.md)|
+|05|Dasar Python|Tipe Data Kolektif (Dictionary)|[M05](M05/README.md)|
