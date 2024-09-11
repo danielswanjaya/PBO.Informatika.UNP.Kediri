@@ -210,5 +210,17 @@ fruits = fruits[:4] + ('Strawberry',) + fruits[4:]
 print('Setelah penyisipan :\n',fruits)
 ```
 
+### 8. Swapping
+Swapping pada Tuple tidak sebebas pada List. Karena Tuple di Python bersifat immutable atau tidak dapat diubah setelah dibuat. Sehingga kita hanya bisa menukar nilai dari dua variabel secara simultan. Dalam hal ini berarti kita akan menukar seluruh konten dari tuple pertama dengan kedua, dan sebaliknya. ContohM0411.py adalah contoh swapping dari 2 buah tuple.
+
+##### ContohM0411.py
+```python
+fruits1 = ('Apple','Pineapple','Mango','Guava','Blueberry')
+fruits2 = ('Banana','Watermelon','Avocado','Strawberry')
+print(f'Awal\nfruits1: {fruits1}\nfruits2: {fruits2}')
+fruits1, fruits2 = fruits2, fruits1
+print(f'Setelah swapping\nfruits1: {fruits1}\nfruits2: {fruits2}')
+```
+
 |[# Awal](../README.md)<br>[# Materi Sebelumnya](../M03/README.md)<br>[# Materi Berikutnya](../M05/README.md)|
 |-|

@@ -334,5 +334,25 @@ print('cek2 == fruits2: ',(cek2 == fruits3))
 print('cek3 == fruits2: ',(cek3 == fruits3))
 ```
 
+### 10. Swapping
+Swapping atau menukar elemen dalam sebuah list di Python berarti kita akan saling menukar posisi dua elemen yang berbeda dalam list tersebut. Ini sering dilakukan dalam algoritma pengurutan atau manipulasi data lainnya. Python memungkinkan kita untuk "membongkar" (unpack) list ke dalam beberapa variabel sekaligus. Ini bisa digunakan untuk swapping dengan cara yang lebih ringkas, seperti pada ContohM0312.py.
+
+##### ContohM0312.py
+```python
+fruits1 = ['Apple','Pineapple','Mango','Guava','Blueberry']
+fruits2 = ['Banana','Watermelon','Avocado','Strawberry']
+print('Sebelum Swapping List')
+print(f'fruits1: {fruits1}\nfruits2: {fruits2}')
+fruits1, fruits2 = fruits2, fruits1
+print('Setelah Swapping List')
+print(f'fruits1: {fruits1}\nfruits2: {fruits2}')
+fruits2[0], fruits2[4] = fruits2[4], fruits2[0]
+print('Setelah Swapping elemen List fruits2')
+print(f'fruits2: {fruits2}')
+print('Setelah Swapping elemen antar List')
+fruits1[1], fruits2[1] = fruits2[1], fruits1[1]
+print(f'fruits1: {fruits1}\nfruits2: {fruits2}')
+```
+
 |[# Awal](../README.md)<br>[# Materi Sebelumnya](../M02/README.md)<br>[# Materi Berikutnya](../M04/README.md)|
 |-|
