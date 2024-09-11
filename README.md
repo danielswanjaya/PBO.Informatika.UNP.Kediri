@@ -22,3 +22,4 @@ Materi dihimpun dari banyak sumber, sehingga kami tidak menyertakan kutipan atau
 |03|Dasar Python|Tipe Data Kolektif (List)|[M03](M03/README.md)|
 |04|Dasar Python|Tipe Data Kolektif (Tuple)|[M04](M04/README.md)|
 |05|Dasar Python|Tipe Data Kolektif (Dictionary)|[M05](M05/README.md)|
+|06|Dasar Python|Tipe Data Kolektif (Set)|[M06](M06/README.md)|
