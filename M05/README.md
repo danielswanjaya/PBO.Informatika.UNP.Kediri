@@ -26,6 +26,18 @@ matkul = dict(kode='INF1011', nama='Pemrograman Berorientasi Obyek',sks = 3)
 infoku = dict([('nama','Dwi Kusuma Dewi'),('npm','2213020777'),('prodi','Teknik Informatika')])
 ```
 
+Selain itu, Dictionary juga bisa dibuat menggunakan fungsi `enumerate()`. Fungsi `enumerate()` sangat berguna untuk membuat dictionary baru, terutama ketika kita ingin menggunakan indeks sebagai kunci dari dictionary tersebut. Fungsi `enumerate()` menghasilkan pasangan (indeks, nilai) dari sebuah iterable (seperti list, tuple, atau string). misal :
+```python
+fruits1 = ['Apple','Pineapple','Mango','Guava','Blueberry']
+dict1 = dict(enumerate(fruits1))
+
+fruits2 = ('Banana','Watermelon','Avocado','Strawberry')
+dict2 = dict(enumerate(fruits2))
+
+fruit = 'Apple'
+dict3 = dict(enumerate(fruit))
+```
+
 ### 2. Akses Nilai dalam Dictionary
 Untuk mengakses value tidak bisa menggunakan indeks seperti List & Tuple, tetapi harus menggunakan key-nya dengan format `dict['key']`. ContohM0501.py adalah contoh pembuatan dan akses nilai dalam Dictionary
 ##### ContohM0501.py
