@@ -24,3 +24,5 @@ Materi dihimpun dari banyak sumber, sehingga kami tidak menyertakan kutipan atau
 |05|Dasar Python|Tipe Data Kolektif (Dictionary)|[M05](M05/README.md)|
 |06|Dasar Python|Tipe Data Kolektif (Set)|[M06](M06/README.md)|
 |07|Dasar Python|Tipe Data Kolektif Kompleks|[M07](M07/README.md)|
+|08|Dasar Python|Tipe Data String|[M08](M08/README.md)|
+|09|Struktur Kontrol|Percabangan (Conditional Statements)|[M09](M09/README.md)|
