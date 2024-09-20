@@ -354,5 +354,68 @@ print(f'|{'':^6}|{'':^8}|{'':>10}|{'':<15}|{'':<7}|{'':<11}',
       f'|{((laptops.get('A4')).get('penjualan')[1]).get('jumlah'):>8}|',sep='')
 ```
 
+ContohM0708.py adalah contoh penggunaan Nested Dictionary untuk menyimpan data mahasiswa dan nilainya.
+##### ContohM0708.py
+```python
+anggota_koperasi = {
+    "101": {
+        "nama": "Andi Laksono", "alamat": "Jl. Mawar No. 10",
+        "simpanan": [
+            {"tanggal": "2023-11-01", "jumlah": 100000},
+            {"tanggal": "2023-12-01", "jumlah": 100000}
+        ],
+        "pinjaman": [
+            {"tanggal": "2023-11-25", "jumlah": 500000, "angsuran": [
+                {"tanggal": "2023-12-01", "jumlah": 50000},
+                {"tanggal": "2023-12-15", "jumlah": 50000}
+            ]}
+        ]
+    },
+    "102": {
+        "nama": "Cici Paramitha", "alamat": "Jl. Anggrek No. 8",
+        "simpanan": [
+            {"tanggal": "2023-11-01", "jumlah": 150000},
+            {"tanggal": "2023-12-01", "jumlah": 150000}
+        ],
+        "pinjaman": [
+            {"tanggal": "2023-12-01", "jumlah": 300000, "angsuran": [
+                {"tanggal": "2024-01-01", "jumlah": 50000}
+            ]}
+        ]
+    },
+    "103": {
+        "nama": "Eni Sagitarius", "alamat": "Jl. Kamboja No. 2",
+        "simpanan": [
+            {"tanggal": "2023-10-01", "jumlah": 200000},
+            {"tanggal": "2023-11-01", "jumlah": 200000},
+            {"tanggal": "2023-12-01", "jumlah": 200000}
+        ],
+        "pinjaman": [
+            {"tanggal": "2023-12-01", "jumlah": 500000, "angsuran": [
+                {"tanggal": "2024-01-01", "jumlah": 100000},
+                {"tanggal": "2024-02-01", "jumlah": 100000},
+                {"tanggal": "2024-03-01", "jumlah": 100000},
+                {"tanggal": "2024-04-01", "jumlah": 100000}
+            ]}
+        ]
+    }
+}
+
+cari = input("Masukan kode Anggota : ")
+hasilCari = anggota_koperasi.get(cari)
+print(f'Nama Anggota : {hasilCari.get('nama')}')
+print(f'Alamat : {hasilCari.get('alamat')}')
+simpanannya = hasilCari.get('simpanan')
+print('\nData Simpanan :\n',simpanannya)
+pinjamannya = hasilCari.get('pinjaman')
+detilPinjaman = pinjamannya[0]
+print('\nData Pinjaman :')
+print(f'Tanggal Pinjam : {detilPinjaman.get('tanggal')}')
+print(f'Jumlah Pinjaman : {detilPinjaman.get('jumlah')}')
+print('Data Angsuran :\n',detilPinjaman.get('angsuran'))
+```
+
+Saat menjalankan program ContohM0708.py, gunakan kode anggota yang sudah ada. Jika tidak menggunakan kode anggota yang sudah ada, maka akan menyebabkan error.
+
 |[# Awal](../README.md)<br>[# Materi Sebelumnya](../M06/README.md)<br>[# Materi Berikutnya](../M08/README.md)|
 |-|
