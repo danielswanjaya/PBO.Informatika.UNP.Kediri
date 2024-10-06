@@ -297,3 +297,6 @@ print(f"\nTeks ditengahkan dengan karakter '*'          : |{teks_tengah_dengan_k
 print(f"Teks disejajarkan ke kiri dengan karakter '-' : |{teks_kiri_dengan_karakter}|")
 print(f"Teks disejajarkan ke kanan dengan karakter '.': |{teks_kanan_dengan_karakter}|")
 ```
+
+|[# Awal](../README.md)<br>[# Materi Sebelumnya](../M07/README.md)<br>[# Materi Berikutnya](../M09/README.md)|
+|-|
