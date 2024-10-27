@@ -901,5 +901,48 @@ match (satuan_awal.lower(), satuan_tujuan.lower()):
 print(f"{suhu} derajat {satuan_awal} setara dengan {hasil} derajat {satuan_tujuan}")
 ```
 
+### 6. Conditional Expression
+Conditional expression atau ekspresi kondisional dalam Python adalah cara ringkas untuk menuliskan pernyataan `if-else` dalam satu baris. Ini sangat berguna untuk membuat kode lebih ringkas dan mudah dibaca dalam situasi tertentu. Tetapi untuk kondisi yang sangat kompleks, mungkin lebih baik menggunakan `if-else` untuk meningkatkan keterbacaan.
+
+Sintaks Dasar:
+```python
+nilai_jika_benar if kondisi else nilai_jika_salah
+```
+dimana :
+* `kondisi`: Ekspresi yang akan dievaluasi menjadi `True` atau `False`.
+* `nilai_jika_benar`: Nilai yang akan dikembalikan jika kondisi bernilai `True`.
+* `nilai_jika_salah`: Nilai yang akan dikembalikan jika kondisi bernilai `False`.
+
+Conditional expression bisa digunakan saat :
+* Ekspresi Sederhana: Cocok untuk kondisi yang sederhana dan tidak memerlukan banyak logika tambahan.
+* Assignment: Sering digunakan untuk memberikan nilai ke variabel berdasarkan suatu kondisi.
+* List Comprehension: Dapat digunakan dalam list comprehension untuk membuat list baru berdasarkan kondisi. (Materi M10)
+* Return Value: Untuk mengembalikan nilai yang berbeda dari fungsi berdasarkan kondisi. (Materi M11)
+
+ContohM0941.py adalah contoh penggunaan Conditional Expression untuk menentukan bilangan genap atau ganjil.
+##### ContohM0941.py
+```python
+angka = int(input("Masukkan sebuah angka: "))
+hasil = "genap" if angka % 2 == 0 else "ganjil"
+print(f"Angka {angka} adalah {hasil}.")
+```
+
+ContohM0942.py adalah contoh penggunaan Conditional Expression untuk menentukan diskon berdasarkan jumlah pembelian.
+##### ContohM0942.py
+```python
+jumlah_pembelian = float(input("Masukkan jumlah pembelian: "))
+diskon = 0.1 if jumlah_pembelian >= 100000 else 0
+harga_akhir = jumlah_pembelian - (jumlah_pembelian * diskon)
+print(f"Anda mendapatkan diskon {diskon*100:.2f}%. Harga akhir: Rp{harga_akhir:,}")
+```
+
+ContohM0943.py adalah contoh penggunaan Conditional Expression untuk menentukan bilangan genap atau ganjil.
+##### ContohM0943.py
+```python
+nilai = float(input("Masukkan nilai ujian: "))
+nilai_huruf = 'E' if nilai < 60 else 'D' if nilai < 70 else 'C' if nilai < 80 else 'B' if nilai < 90 else 'A'
+print(f"Nilai huruf Anda adalah {nilai_huruf}.")
+```
+
 |[# Awal](../README.md)<br>[# Materi Sebelumnya](../M08/README.md)<br>[# Materi Berikutnya](../M10/README.md)|
 |-|
