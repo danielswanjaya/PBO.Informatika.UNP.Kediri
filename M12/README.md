@@ -63,7 +63,7 @@ print(f'Huruf penyusun yang sama: {huruf_sama(kata1,kata2)}')
 ontohM1204.py adalah contoh penggunaan Lambda Function untuk mengolah sebuah List.
 #### ContohM1204.py
 ```python
-numbers = [range(1,11)]
+angka = list(range(1,11))
 
 squared_numbers = list(map(lambda x: x**2, numbers))
 odd_numbers = list(filter(lambda x: x % 2 == 1, numbers))
@@ -1260,12 +1260,16 @@ Fungsi-fungsi utama dalam os:
 * `listdir(path)`: Mengembalikan daftar nama berkas dan subdirektori dalam direktori path.
 * `walk(top)`: Melakukan traversal pada direktori top dan semua subdirektori.
 
+Selengkapnya bisa Anda pelajari di : https://docs.python.org/3.12/library/os.html
+
 Library `shutil` menyediakan fungsi-fungsi tingkat tinggi untuk melakukan operasi pada berkas dan direktori, seperti menyalin, memindahkan, dan menghapus secara rekursif. Modul ini dibangun di atas modul os dan memberikan antarmuka yang lebih mudah digunakan. Fungsi-fungsi utama dalam shutil:
 * `copy(src, dst)`: Menyalin berkas dari src ke dst.
 * `copy2(src, dst)`: Menyalin berkas beserta metadata (seperti waktu modifikasi).
 * `copytree(src, dst)`: Menyalin seluruh direktori beserta isinya.
 * `move(src, dst)`: Memindahkan berkas atau direktori.
 * `rmtree(path)`: Menghapus direktori beserta semua isinya secara rekursif.
+
+Selengkapnya bisa Anda pelajari di : https://docs.python.org/id/3.12/library/shutil.html
 
 Library `os` lebih cocok untuk operasi tingkat rendah pada sistem berkas, seperti membuat, menghapus, dan mengubah nama berkas dan direktori. Sementara `shutil` lebih cocok untuk operasi tingkat tinggi yang melibatkan beberapa berkas atau direktori, seperti menyalin, memindahkan, dan menghapus secara rekursif.
 
@@ -1393,4 +1397,288 @@ def move_files_by_extension(source_dir, dest_dir, extension):
 move_files_by_extension("M11", "M12", ".txt")
 ```
 
-#### E. Library `random`
+#### F. Library `random` & `statistics`
+Library `random` di Python adalah modul bawaan yang menyediakan berbagai fungsi untuk menghasilkan bilangan acak. Tetapi Bilangan yang dihasilkan oleh komputer bukanlah benar-benar acak, melainkan pseudo-random. Artinya, bilangan-bilangan ini dihasilkan berdasarkan algoritma tertentu yang dirancang untuk menghasilkan urutan bilangan yang tampak acak. Bilangan acak ini sangat berguna dalam berbagai aplikasi, mulai dari pembuatan game sederhana hingga simulasi kompleks, misalnya :
+* Simulasi: Meniru kejadian acak di dunia nyata, seperti pelemparan dadu, pengambilan kartu, atau pergerakan partikel.
+* Pengujian: Membuat data uji yang bervariasi untuk memastikan program bekerja dengan baik dalam berbagai kondisi.
+* Kriptografi: Membangkitkan kunci enkripsi yang sulit ditebak.
+* Algoritma genetika: Membangkitkan populasi awal yang acak untuk memulai proses evolusi.
+* Game: Membuat elemen permainan yang tidak dapat diprediksi, seperti posisi musuh, hadiah, atau hasil pertarungan.
+
+Fungsi-Fungsi Utama dalam `random`:
+* `random()`: Menghasilkan bilangan floating-point acak antara 0.0 (inklusif) dan 1.0 (eksklusif). Ini adalah fungsi dasar yang sering digunakan sebagai dasar untuk menghasilkan bilangan acak dalam rentang yang lebih luas.
+* `randint(a, b)`: Menghasilkan bilangan bulat acak antara `a` (inklusif) dan `b` (inklusif). Sangat berguna ketika Anda membutuhkan bilangan bulat acak dalam suatu rentang tertentu.
+* `uniform(a, b)`: Menghasilkan bilangan floating-point acak antara `a` dan `b` secara seragam. Mirip dengan randint, tetapi untuk bilangan desimal.
+* `randrange(start, stop[, step])`: Menghasilkan bilangan bulat acak dari rentang start hingga stop dengan langkah step. Ini memungkinkan Anda untuk menghasilkan bilangan acak dengan interval tertentu.
+* `choice(seq)`: Memilih secara acak satu elemen dari sebuah sequence (list, tuple, string). Sangat berguna untuk memilih elemen secara acak dari suatu kumpulan data.
+* `choices(population, weights=None, cum_weights=None, k=1)`: Memilih `k` elemen secara acak dengan atau tanpa pengulangan dari sebuah populasi. Opsi `weights` dan `cum_weights` memungkinkan Anda memberikan bobot pada elemen-elemen tertentu, sehingga elemen dengan bobot lebih tinggi memiliki peluang lebih besar untuk terpilih.
+* `sample(population, k)`: Memilih `k` elemen secara acak tanpa pengulangan dari sebuah populasi. Berbeda dengan `choices`, fungsi ini tidak memungkinkan pengulangan elemen.
+* `shuffle(x)`: Mengacak elemen-elemen dalam sebuah list secara in-place. Artinya, list asli akan diubah.
+* `gauss(mu, sigma)`: Menghasilkan bilangan acak mengikuti distribusi normal (Gaussian) dengan rata-rata `mu` dan deviasi standar `sigma`.
+* `expovariate(lambd)`: Menghasilkan bilangan acak mengikuti distribusi eksponensial dengan parameter `lambd`.
+
+Selengkapnya bisa Anda pelajari di : https://docs.python.org/3.12/library/random.html
+
+ContohM1242.py adalah contoh penggunaan fungsi di library random untuk memilih Elemen secara Acak dari Daftar (List)
+#### ContohM1242.py
+```python
+import random
+
+siswa = ['Andi', 'Ranu', 'Budi', 'Nanda', 'Cici', 'Dedi', 'Bagus', 'Eni']
+
+siswa_terpilih1 = random.choice(siswa)
+siswa_terpilih2 = random.sample(siswa, 3)
+
+print("1 Siswa yang terpilih:", siswa_terpilih1)
+print("3 Siswa yang terpilih:", siswa_terpilih2)
+```
+
+ContohM1243.py adalah contoh penggunaan fungsi di library random untuk membuat Password Acak N karakter
+#### ContohM1243.py
+```python
+import random
+import string
+
+def generate_password(length):
+    """
+    Membuat password acak dengan panjang yang ditentukan.
+    Args:
+        length (int): Panjang password yang diinginkan.
+    Returns:
+        str: Password acak yang terdiri dari huruf dan angka.
+    """
+    letters = string.ascii_letters
+    digits = string.digits
+    password = ''.join(random.choice(letters + digits) for _ in range(length))
+    return password
+
+panjang_password = int(input("Masukkan panjang password yang diinginkan: "))
+
+password = generate_password(panjang_password)
+
+print("Password acak Anda:", password)
+```
+
+ContohM1244.py adalah contoh penggunaan fungsi di library random untuk Simulasi Jalan Random
+#### ContohM1244.py
+```python
+import random
+
+def jalan_random(langkah):
+    """Simulasi seseorang berjalan secara acak ke arah utara, selatan, timur, atau barat."""
+    arah = ["utara", "selatan", "timur", "barat"]
+    posisi = [0, 0]  # Awal di titik (0, 0)
+    jejak = []
+    for _ in range(langkah):
+        arah_acak = random.choice(arah)
+        match arah_acak :
+            case "utara":
+                posisi[1] += 1
+            case "selatan":
+                posisi[1] -= 1
+            case "timur":
+                posisi[0] += 1
+            case "barat":
+                posisi[0] -= 1
+        jejak.append([arah_acak, posisi.copy()])
+    return jejak, posisi
+
+perjalanan, hasil_jalan = jalan_random(10)
+print("Perjalanan setelah titik [0, 0]:")
+for arah, titik in perjalanan :
+    print(arah.capitalize(),'->',titik)
+print("Posisi akhir:", hasil_jalan)
+```
+
+ContohM1245.py adalah contoh penggunaan fungsi di library random untuk 
+#### ContohM1245.py
+```python
+import random
+
+suit = ['hati', 'wajik', 'keriting', 'sekop']
+rank = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+deck = [(s, r) for s in suit for r in rank]
+
+def ambil_kartu(deck):
+    """Mengambil kartu teratas dari deck.
+    Args:
+        deck (list): List of tuples representing cards.
+    Returns:
+        tuple: A tuple representing the card drawn.
+    """
+    return deck.pop()
+
+def buat_tangan(deck, jumlah_kartu):
+    """Membuat tangan kartu dengan jumlah kartu yang ditentukan.
+    Args:
+        deck (list): List of tuples representing cards.
+        jumlah_kartu (int): Number of cards in a hand.
+    Returns:
+        list: A list of tuples representing the hand.
+    """
+    return [ambil_kartu(deck) for _ in range(jumlah_kartu)]
+
+def urutkan_kartu(tangan):
+    """Mengurutkan kartu dalam sebuah tangan berdasarkan rank.
+    Args:
+        tangan (list): A list of tuples representing a hand.
+    Returns:
+        list: A sorted list of tuples representing the hand.
+    """
+    tangan.sort(key=lambda x: rank.index(x[1]))
+    return tangan
+
+def nilai_kartu(tangan):
+    """Menghitung nilai sederhana dari sebuah tangan (hanya menghitung pasangan).
+    Args:
+        tangan (list): A list of tuples representing a hand.
+    Returns:
+        int: A simple value representing the hand's strength.
+    """
+    nilai = 0
+    for r in rank:
+        jumlah_kartu_sama = sum(1 for kartu in tangan if kartu[1] == r)
+        if jumlah_kartu_sama == 2:
+            nilai += 1
+    return nilai
+
+def bandingkan_tangan(tangan1, tangan2):
+    """Membandingkan dua tangan kartu berdasarkan nilai sederhana.
+    Args:
+        tangan1 (list): A list of tuples representing a hand.
+        tangan2 (list): A list of tuples representing a hand.
+    Returns:
+        int: 1 if tangan1 > tangan2, -1 if tangan1 < tangan2, 0 if tie.
+    """
+    nilai1 = nilai_kartu(tangan1)
+    nilai2 = nilai_kartu(tangan2)
+    if nilai1 > nilai2:
+        return 1
+    elif nilai1 < nilai2:
+        return -1
+    else:
+        return 0
+
+# Bagikan kartu untuk 5 pemain
+random.shuffle(deck)
+pemain = []
+for i in range(5):
+    kartu_diterima = buat_tangan(deck, 5)
+    pemain.append(kartu_diterima)
+    print(f"Kartu Pemain ke-{i+1}:")
+    for kartu in kartu_diterima :
+        print(f'\t{kartu}')
+
+# Urutkan kartu setiap pemain
+for i in range(5):
+    pemain[i] = urutkan_kartu(pemain[i])
+
+# Tentukan pemenang
+pemenang = 0
+nilai_tertinggi = 0
+for i, tangan in enumerate(pemain):
+    nilai = nilai_kartu(tangan)
+    if nilai > nilai_tertinggi:
+        pemenang = i
+        nilai_tertinggi = nilai
+
+print(f"Pemenang: Pemain ke-{pemenang + 1}")
+print("Kartu pemenang:", pemain[pemenang])
+```
+
+Library `statistics` di Python adalah alat yang sangat berguna untuk melakukan analisis data dasar. Ia memberikan sekumpulan fungsi yang memungkinkan kita untuk menghitung berbagai ukuran statistik deskriptif dengan cepat dan mudah. Ukuran-ukuran ini memberikan gambaran yang komprehensif tentang data kita, seperti sebaran data, pusat data, dan variabilitasnya. Fungsi-fungsi yang disediakan oleh library `statistics` dioptimasi untuk kinerja, sehingga perhitungan statistik dapat dilakukan dengan cepat, bahkan untuk dataset yang besar. Library `statistics` hanya dapat digunakan untuk data numerik.
+
+Fungsi-fungsi Umum dalam Library `statistics` :
+* `mean(data)`: Menghitung rata-rata aritmatika dari data.
+* `median(data)`: Menghitung median (nilai tengah) dari data.
+* `mode(data)`: Menghitung modus (nilai yang paling sering muncul) dari data.
+* `harmonic_mean(data)`: Menghitung rata-rata harmonik.
+* `variance(data)`: Menghitung variansi sampel.
+* `pvariance(data)`: Menghitung variansi populasi.
+* `stdev(data)`: Menghitung deviasi standar sampel.
+* `pstdev(data)`: Menghitung deviasi standar populasi.
+* `quantiles(data, n=4, *, method='inclusive')`: Menghitung kuantil (misalnya, kuartil, desil) dari data.
+* `median_grouped(data, interval=1)`: Menghitung median untuk data yang dikelompokkan dalam interval.
+* `median_low(data)`: Menghitung median bawah (untuk data dengan jumlah data genap).
+* `median_high(data)`: Menghitung median atas (untuk data dengan jumlah data genap).
+
+Selengkapnya bisa Anda pelajari di : https://docs.python.org/3.12/library/statistics.html
+
+ContohM1246.py adalah contoh penggunaan fungsi di library random untuk menghitung nilai rata-rata, median dan varian dari suatu data.
+#### ContohM1246.py
+```python
+import statistics
+from random import randint
+
+N = 30
+
+nilai_matematika = [randint(60, 100) for _ in range(N)]
+nilai_bahasa_inggris = [randint(60, 100) for _ in range(N)]
+
+rata_rata_matematika = statistics.mean(nilai_matematika)
+rata_rata_bahasa_inggris = statistics.mean(nilai_bahasa_inggris)
+
+median_matematika = statistics.median(nilai_matematika)
+median_bahasa_inggris = statistics.median(nilai_bahasa_inggris)
+
+varians_matematika = statistics.variance(nilai_matematika)
+varians_bahasa_inggris = statistics.variance(nilai_bahasa_inggris)
+
+# Menampilkan hasil
+print("Rata-rata nilai Matematika:", rata_rata_matematika)
+print("Rata-rata nilai Bahasa Inggris:", rata_rata_bahasa_inggris)
+print("Median nilai Matematika:", median_matematika)
+print("Median nilai Bahasa Inggris:", median_bahasa_inggris)
+print("Varians nilai Matematika:", varians_matematika)
+print("Varians nilai Bahasa Inggris:", varians_bahasa_inggris)
+```
+
+#### G. Library `re`
+Library `re` di Python adalah alat yang sangat kuat dan fleksibel untuk memanipulasi teks dengan menggunakan ekspresi reguler (regular expression). Ekspresi reguler adalah pola pencarian yang digunakan untuk mencocokkan rangkaian karakter dalam sebuah teks. Konsep Dasar Ekspresi Reguler :
+* Metakarakter: Karakter khusus yang memiliki arti tertentu dalam ekspresi reguler, seperti :
+    - `.`: Cocok dengan karakter apa saja kecuali newline.
+    - `^`: Cocok dengan awal string.
+    - `$`: Cocok dengan akhir string.
+    - `*`: Cocok dengan nol atau lebih kemunculan karakter sebelumnya.
+    - `+`: Cocok dengan satu atau lebih kemunculan karakter sebelumnya.
+    - `?`: Cocok dengan nol atau satu kemunculan karakter sebelumnya.
+    - `{}`: Menentukan jumlah pengulangan yang tepat atau rentang pengulangan.
+    - `[]`: Mendefinisikan kelas karakter (set karakter).
+* Operator: Operator yang digunakan untuk menggabungkan atau memodifikasi ekspresi reguler, seperti tanda pipa (|) untuk alternatif dan tanda kurung () untuk pengelompokan.
+* Kelas karakter: Seperangkat karakter yang didefinisikan dalam tanda kurung siku, misalnya [a-z] untuk huruf kecil a sampai z.
+
+Dengan library `re`, Anda dapat melakukan berbagai operasi pada teks seperti mencari, mengganti, dan mengekstrak bagian-bagian tertentu dari teks, seperti :
+* Pencocokan pola: Mencari kata, frasa, atau pola tertentu dalam sebuah teks.
+* Penggantian teks: Mengganti teks yang cocok dengan pola tertentu dengan teks yang baru.
+* Validasi data: Memeriksa apakah suatu input teks sesuai dengan format yang diharapkan (misalnya, alamat email, nomor telepon).
+* Parsing teks: Membagi teks menjadi bagian-bagian yang lebih kecil berdasarkan pola tertentu.
+
+Fungsi-Fungsi Utama dalam Library re
+* `compile(pattern, flags=0)`: Mengkompilasi sebuah pola ekspresi reguler menjadi sebuah objek pattern yang dapat digunakan untuk pencarian yang lebih efisien.
+* `search(pattern, string, flags=0)`: Mencari kemunculan pertama dari pola dalam sebuah string. Mengembalikan objek match jika ditemukan, atau None jika tidak ditemukan.
+* `findall(pattern, string, flags=0)`: Mencari semua kemunculan non-overlapping dari pola dalam sebuah string dan mengembalikannya dalam bentuk list.
+* `split(pattern, string, maxsplit=0, flags=0)`: Membagi string menjadi sub-string berdasarkan pola pemisah.
+* `sub(pattern, repl, string, count=0, flags=0)`: Mengganti semua kemunculan pola dalam sebuah string dengan string pengganti.
+* `subn(pattern, repl, string, count=0, flags=0)`: Sama dengan `sub()`, tetapi juga mengembalikan jumlah penggantian yang dilakukan.
+* `match(pattern, string, flags=0)`: Sama seperti `search()`, tetapi hanya mencari pada awal string.
+
+Flag digunakan untuk memodifikasi perilaku pencarian. Beberapa flag yang umum digunakan:
+* `I`: Melakukan pencarian tanpa memperhatikan huruf besar atau kecil.
+* `M`: Mengaktifkan mode multi-line, di mana ^ cocok dengan awal setiap baris dan $ cocok dengan akhir setiap baris.
+* `S`: Membuat . cocok dengan semua karakter, termasuk newline.
+* `X`: Mengabaikan whitespace dan komentar dalam ekspresi reguler untuk meningkatkan keterbacaan.
+
+Selengkapnya bisa Anda pelajari di : https://docs.python.org/3.12/library/re.html
+
+#### H. Library `collections`
+Library `collections` di Python adalah sebuah modul yang menawarkan berbagai jenis wadah data (container) khusus yang dirancang untuk mengatasi masalah-masalah umum dalam pemrograman Python. Wadah-wadah data ini memberikan alternatif yang lebih efisien dan mudah digunakan dibandingkan dengan struktur data bawaan seperti list, dictionary dan tuple.
+
+Container Utama dalam `collections` :
+* `Counter`: Digunakan untuk menghitung frekuensi elemen dalam sebuah iterable. Sangat berguna untuk menghitung kemunculan kata dalam teks, atau menghitung jumlah elemen unik dalam suatu daftar.
+* `OrderedDict`: Mirip dengan dictionary, tetapi mempertahankan urutan penyisipan key-value pairs.
+* `defaultdict`: Sebuah subclass dari dictionary yang memungkinkan Anda menentukan nilai default untuk kunci yang belum ada.
+* `deque`: Sebuah double-ended queue yang dioptimalkan untuk operasi penambahan dan penghapusan elemen di awal atau akhir. Cocok untuk implementasi stack, queue, dan algoritma yang membutuhkan akses cepat ke kedua ujung data.
+* `namedtuple`: Membuat tuple dengan field yang diberi nama, sehingga lebih mudah dibaca dan diakses.
+* `ChainMap`: Menggabungkan beberapa dictionary menjadi satu tampilan.
+
+Selengkapnya bisa Anda pelajari di : https://docs.python.org/3.12/library/collections.html
