@@ -1490,7 +1490,7 @@ for arah, titik in perjalanan :
 print("Posisi akhir:", hasil_jalan)
 ```
 
-ContohM1245.py adalah contoh penggunaan fungsi di library random untuk 
+ContohM1245.py adalah contoh penggunaan fungsi di library random untuk simulasi permainan kartu remi, khususnya permainan poker, dengan mempertimbangkan penilaian tangan dan perbandingannya.
 #### ContohM1245.py
 ```python
 import random
@@ -1604,7 +1604,7 @@ Fungsi-fungsi Umum dalam Library `statistics` :
 
 Selengkapnya bisa Anda pelajari di : https://docs.python.org/3.12/library/statistics.html
 
-ContohM1246.py adalah contoh penggunaan fungsi di library random untuk menghitung nilai rata-rata, median dan varian dari suatu data.
+ContohM1246.py adalah contoh penggunaan fungsi di library statistics untuk menghitung nilai rata-rata, median dan varian dari suatu data.
 #### ContohM1246.py
 ```python
 import statistics
@@ -1631,6 +1631,114 @@ print("Median nilai Matematika:", median_matematika)
 print("Median nilai Bahasa Inggris:", median_bahasa_inggris)
 print("Varians nilai Matematika:", varians_matematika)
 print("Varians nilai Bahasa Inggris:", varians_bahasa_inggris)
+```
+
+ContohM1247.py adalah contoh penggunaan fungsi di library statistics untuk Analisis Data Pertumbuhan Perusahaan
+#### ContohM1247.py
+```python
+import statistics
+
+def analisis_pertumbuhan_perusahaan(data_pertumbuhan):
+    """
+    Melakukan analisis terhadap data pertumbuhan pendapatan perusahaan.
+    Args:
+        data_pertumbuhan: List of floats representing the annual growth rate.
+    Returns:
+        tuple: A tuple containing:
+        - tahun_tertinggi: Tahun dengan pertumbuhan tertinggi.
+        - tahun_terendah: Tahun dengan pertumbuhan terendah.
+        - rata_rata_pertumbuhan: Rata-rata pertumbuhan per tahun.
+        - deviasi_standar: Deviasi standar pertumbuhan.
+        - kuartil_1: Kuartil pertama.
+        - kuartil_3: Kuartil ketiga.
+        - outliers: List of years that are considered outliers.
+    """
+    # Tahun dengan pertumbuhan tertinggi dan terendah
+    tahun_tertinggi = data_pertumbuhan.index(max(data_pertumbuhan)) + 1
+    tahun_terendah = data_pertumbuhan.index(min(data_pertumbuhan)) + 1
+
+    # Pertumbuhan rata-rata
+    rata_rata_pertumbuhan = statistics.mean(data_pertumbuhan)
+
+    # Volatilitas (deviasi standar)
+    deviasi_standar = statistics.stdev(data_pertumbuhan)
+
+    # Kuartil
+    kuartil_1 = statistics.quantiles(data_pertumbuhan)[0]
+    kuartil_3 = statistics.quantiles(data_pertumbuhan)[2]
+
+    # Outliers (nilai di luar 2 deviasi standar)
+    outliers = [tahun for tahun, pertumbuhan in enumerate(data_pertumbuhan, start=1)
+                if pertumbuhan < rata_rata_pertumbuhan - 2 * deviasi_standar or
+                pertumbuhan > rata_rata_pertumbuhan + 2 * deviasi_standar]
+
+    return tahun_tertinggi, tahun_terendah, rata_rata_pertumbuhan, deviasi_standar, kuartil_1, kuartil_3, outliers
+
+print('Analisis Data Pertumbuhan Perusahaan Maju Mapan')
+
+# Data pertumbuhan pendapatan (dalam persen)
+pertumbuhan_pendapatan = [10, 15, 8, 12, 20, -5, 7, 11, 13, 9]
+
+# Memanggil fungsi dan menyimpan hasil
+hasil = analisis_pertumbuhan_perusahaan(pertumbuhan_pendapatan)
+
+# Menampilkan hasil
+print("Tahun dengan pertumbuhan tertinggi:", hasil[0])
+print("Tahun dengan pertumbuhan terendah:", hasil[1])
+print("Pertumbuhan rata-rata:", hasil[2], "%")
+print("Volatilitas (deviasi standar):", hasil[3], "%")
+print("Kuartil 1:", hasil[4])
+print("Kuartil 3:", hasil[5])
+print("Tahun dengan pertumbuhan outlier:", hasil[6])
+```
+
+ContohM1248.py adalah contoh penggunaan fungsi di library statistics untuk Analisis Data Kepuasan Pelanggan
+#### ContohM1248.py
+```python
+import statistics
+
+def analisis_kepuasan_pelanggan(data_kepuasan):
+    """
+    Melakukan analisis terhadap data kepuasan pelanggan.
+    Args:
+        data_kepuasan: Dictionary where keys are branch names and values are lists of customer satisfaction ratings.
+    Returns:
+        tuple: A tuple containing:
+        - cabang_terbaik: Cabang dengan rata-rata kepuasan tertinggi.
+        - cabang_terburuk: Cabang dengan rata-rata kepuasan terendah.
+        - varians_cabang: Dictionary berisi varians kepuasan untuk setiap cabang.
+        - persentase_sangat_puas: Dictionary berisi persentase pelanggan sangat puas untuk setiap cabang.
+    """
+    rata_rata_cabang = {}
+    varians_cabang = {}
+    persentase_sangat_puas = {}
+
+    for cabang, nilai in data_kepuasan.items():
+        rata_rata_cabang[cabang] = statistics.mean(nilai)
+        varians_cabang[cabang] = statistics.variance(nilai)
+        persentase_sangat_puas[cabang] = nilai.count(5) / len(nilai) * 100
+
+    cabang_terbaik = max(rata_rata_cabang, key=rata_rata_cabang.get)
+    cabang_terburuk = min(rata_rata_cabang, key=rata_rata_cabang.get)
+
+    return cabang_terbaik, cabang_terburuk, varians_cabang, persentase_sangat_puas
+
+print('Analisis Data Kepuasan Pelanggan')
+# Data kepuasan pelanggan (contoh)
+data_kepuasan = {
+    "Cabang A": [4, 5, 3, 2, 5],
+    "Cabang B": [3, 2, 4, 3, 2],
+    "Cabang C": [5, 5, 5, 4, 5]
+}
+
+# Memanggil fungsi dan menyimpan hasil
+hasil = analisis_kepuasan_pelanggan(data_kepuasan)
+
+# Menampilkan hasil
+print("Cabang dengan kepuasan tertinggi:", hasil[0])
+print("Cabang dengan kepuasan terendah:", hasil[1])
+print("Varians kepuasan per cabang:", hasil[2])
+print("Persentase pelanggan sangat puas per cabang:", hasil[3])
 ```
 
 #### G. Library `re`
@@ -1670,6 +1778,72 @@ Flag digunakan untuk memodifikasi perilaku pencarian. Beberapa flag yang umum di
 
 Selengkapnya bisa Anda pelajari di : https://docs.python.org/3.12/library/re.html
 
+ContohM1249.py adalah contoh penggunaan fungsi di library re untuk Validasi Alamat Email
+#### ContohM1249.py
+```python
+import re
+
+def validasi_email(email):
+    """
+    Memvalidasi apakah suatu string merupakan alamat email yang valid.
+    Args:
+        email: String yang akan divalidasi.
+    Returns:
+        bool: True jika valid, False jika tidak valid.
+    """
+
+    # Pola regular expression untuk alamat email
+    pola_email = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+
+    # Cek apakah email cocok dengan pola
+    if re.match(pola_email, email):
+        return True
+    else:
+        return False
+
+print('Validasi Alamat Email')
+
+email1 = "john.doe@example.com"
+email2 = "invalid_email"
+email3 = "someone@gmail.com.co"
+email4 = "joko@unpkediri.ac.id"
+
+print(email1,':',validasi_email(email1))
+print(email2,':',validasi_email(email2))
+print(email3,':',validasi_email(email3))
+print(email4,':',validasi_email(email4))
+```
+
+ContohM1250.py adalah contoh penggunaan fungsi di library re untuk Ekstraksi Nomor Telepon dari Teks
+#### ContohM1250.py
+```python
+import re
+
+def ekstrak_nomor_telepon(teks):
+    """
+    Mengekstrak semua nomor telepon dari sebuah teks.
+    Args:
+        teks: Teks yang akan diproses.
+    Returns:
+        list: List berisi semua nomor telepon yang ditemukan.
+    """
+    # Pola regular ekspresi untuk nomor telepon
+    pola_nomor_telepon = r'(\(\d{3}\)\s\d{7}|\d{10,12}|\+\d{12})'
+
+    # Cari semua kemunculan pola dalam teks
+    nomor_telepon = re.findall(pola_nomor_telepon, teks)
+
+    return nomor_telepon
+
+print('Ekstraksi Nomor Telepon dari Teks')
+teks = "Hubungi saya di (021) 1234567 atau 081234567890. Nomor kantor: +622198765432."
+nomor = ekstrak_nomor_telepon(teks)
+print('Pesan:',teks)
+print('Nomor Telepon pada Pesan:')
+for satuan in nomor:
+    print(satuan)
+```
+
 #### H. Library `collections`
 Library `collections` di Python adalah sebuah modul yang menawarkan berbagai jenis wadah data (container) khusus yang dirancang untuk mengatasi masalah-masalah umum dalam pemrograman Python. Wadah-wadah data ini memberikan alternatif yang lebih efisien dan mudah digunakan dibandingkan dengan struktur data bawaan seperti list, dictionary dan tuple.
 
@@ -1682,3 +1856,15 @@ Container Utama dalam `collections` :
 * `ChainMap`: Menggabungkan beberapa dictionary menjadi satu tampilan.
 
 Selengkapnya bisa Anda pelajari di : https://docs.python.org/3.12/library/collections.html
+
+ContohM1251.py adalah contoh penggunaan Container Counter di library collections untuk Ekstraksi Nomor Telepon dari Teks
+#### ContohM1251.py
+```python
+
+```
+
+ContohM1252.py adalah contoh penggunaan Container di library collections untuk Ekstraksi Nomor Telepon dari Teks
+#### ContohM1252.py
+```python
+
+```
