@@ -26,6 +26,6 @@ Materi dihimpun dari banyak sumber, sehingga kami tidak menyertakan kutipan atau
 |07|Dasar Python|Tipe Data Kolektif Kompleks|[M07](M07/README.md)|
 |08|Dasar Python|Tipe Data String|[M08](M08/README.md)|
 |09|Struktur Kontrol|Percabangan (Conditional Statements)|[M09](M09/README.md)|
-|10|Struktur Kontrol|Percabangan (Repetition/Looping)|[M10](M10/README.md)|
+|10|Struktur Kontrol|Perulangan (Repetition/Looping)|[M10](M10/README.md)|
 |11|Function|Function & Return Value|[M11](M11/README.md)|
 |12|Function|Lambda, Fungsi Rekursif dan Standard Library Function|[M12](M12/README.md)|
